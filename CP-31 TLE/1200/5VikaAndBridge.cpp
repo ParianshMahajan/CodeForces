@@ -12,14 +12,13 @@ int main(){
 		ll n,k;
 		cin>>n>>k;
 
-		vector<int>arr(n);
 
         vector<vector<int>> color(k, vector<int>(1,-1));
 		
-
+		int l;
 		for(int i=0;i<n;i++){
-			cin>>arr[i];
-			color[arr[i]-1].push_back(i);
+			cin>>l;
+			color[l-1].push_back(i);
 		}
 
 		int ans=INT_MAX;
