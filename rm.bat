@@ -1,7 +1,7 @@
 @echo off
 rem Deletes all .exe files in the current folder where the batch file is run
 
-echo Deleting all .exe files in the current folder...
+echo Deleting all .exe files in the current folder...   
 del /s /q *.exe
 echo Done deleting .exe files.
 
