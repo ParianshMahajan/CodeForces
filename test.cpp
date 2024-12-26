@@ -1,17 +1,37 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
+typedef long long ll;
+
 int main() {
-    int n;
-    cin >> n; // Size of vector
-	int l;
-    vector<pair<int, int>> ac = {{INT_MIN, -1}, {INT_MIN, -1}, {INT_MIN, -1}};
-    for (int i = 0; i < n; i++) {
-        cin >> l;
+    ll t;
+    cin >> t;
+	
 
-		// Write the logic here to push and keep only top 3 values in ac {a[i],i}
-		// such that a[i] will be primary deciding characteristic and i will be second
+    while (t--) {
+        ll x,y;
+        cin >> x>>y;
 
+        // row's even no. has revere order
+        // col's even no. has normal order 
+
+
+        if(x>y){
+            if(x%2==0){
+                cout<<((x*x)-(y-1))<<endl;
+            }
+            else{
+                cout<<(((x-1)*(x-1)+1) +(y-1))<<endl;
+            }
+        }
+        else{
+             if(y%2==0){
+                cout<<(((y-1)*(y-1)+1) +(x-1))<<endl;
+            }
+            else{
+                cout<<((y*y)-(x-1))<<endl;
+            }
+        }
 
     }
 
