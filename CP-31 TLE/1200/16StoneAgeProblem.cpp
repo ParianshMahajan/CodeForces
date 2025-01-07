@@ -13,21 +13,33 @@ int main() {
 		sum+=a[i];
 	}
 
+	unordered_map<int,int>m;
+	int r=0;
 	while(q--){
 		int t;
 		cin>>t;
 		if(t==1){
 			ll i,x;
 			cin>>i>>x;
-			sum+=x-a[i-1];
-			a[i-1]=x;
+			if(r==0){
+				sum+=x-a[i-1];
+				a[i-1]=x;
+			}
+			else if(m[i]){
+				sum+=x-m[i];
+			}
+			else{
+				sum+=x-r;
+				m[i]=x;
+			}
 			cout<<sum<<endl;
 		}
 		else{
 			ll x;
 			cin>>x;
-			a=vector<int>(n,x);	
 			sum=x*n;
+			r=x;
+			m.clear();
 			cout<<sum<<endl;
 		}
 	}
