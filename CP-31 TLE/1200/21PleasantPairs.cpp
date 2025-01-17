@@ -26,10 +26,9 @@ int main() {
 				l++;
 			}
 
-			int j=x-(i+1)-1;
+			int j= a[i]==1? i+1 :x-(i+1)-1;
 
-			cout<<j+1<<endl;
-
+	
 			while(j<n){
 				if(a[i]*a[j]==i+j+2) ans++;
 				j=j+a[i];
